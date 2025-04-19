@@ -1,0 +1,1249 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+:root {
+    --primary: #F47373;
+    --secondary: #FFDDE1;
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #3F383B;
+    --gradient: linear-gradient(to bottom, #F47373, #DA6AA8);
+
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial,  sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    width: 100%;
+    background-color: var(--primary);
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 0.05rem 0.4rem rgba(0,0,0,0.2);
+}
+
+.nav_logo {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: "Margarine", sans-serif;
+    font-weight: 300;
+    font-style: normal;  
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.logo_text {
+    line-height: 1.2em;
+    font-weight: bold;
+    position: relative;
+}
+
+.logo_top {
+    font-size: 1.2rem;
+    position: relative;
+    left: -0.625rem; 
+}
+
+.logo_bottom {
+    position: relative;
+    left: 0.625rem ; 
+    font-size: 1.2rem;
+}
+
+ul.nav_links {
+    display: flex;
+    list-style: none;
+    margin-right: 1rem;
+}
+
+ul.nav_links li {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+ul.nav_links li a {
+    font-size: 1.1875rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+    margin-right: 1rem;
+    margin-left: 2.5rem;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+ul.nav_links li a::after {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    bottom: -5px; 
+    width: 100%;
+    height: 3px; 
+    background-color: rgb(217, 217, 217);
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+ul.nav_links li a:hover {
+    color: rgb(217, 217, 217);
+}
+
+ul.nav_links li a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-btn a {
+    font-size: 1.3rem;
+    font-family: "Margarine", sans-serif;
+    font-weight: 300;
+    font-style: normal;  
+    color: var(--white);
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8em 1.2em;
+    border: 2px solid var(--white);
+    border-radius: 0.85em;
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-btn a:hover {
+    background-color: rgb(250, 216, 216);
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    height: 1.2rem;
+    justify-content: space-between;
+    position: relative;
+    display: none;
+}
+
+.menu-toggle input {
+    position: absolute;
+    top: 0.3125rem;
+    right: 0.3125rem;
+    width: 2.8125rem;
+    height: 1.875rem;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 1.875rem;
+    height: 0.20rem;
+    background-color: var(--primary);
+    border-radius: 0.3125rem;
+    transition: all 0.5s;
+}
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-0.125rem, -0.055rem);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+}
+
+ .menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-0.180rem, 0);
+}
+
+.wrapper-menu {
+    display: none;
+}
+
+
+.home_section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: var(--primary);
+    margin: auto;
+    box-shadow: 0 0.05rem 0.4rem rgba(0,0,0,0.3);
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6rem;
+}
+
+.main-description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-description h1 {
+    font-size: 3rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.main-description p  {
+    font-size: 1.2rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--white);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.action_buttons {
+    display: flex;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.btn {
+    font-size: 1.2rem;
+    padding: 0.8em 1.5em;
+    border-radius: 0.5em;
+    background-color: var(--white);
+    font-family: "Madimi One", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--primary);
+    text-decoration: none;
+    transition: transfora 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    transform: scale(1.03);
+    transition: all 0.5s ease;
+}
+
+.home_pic_container {
+    margin-right: 3rem;
+}
+
+.home_pic_container img {
+    width: 100%;
+}
+
+
+.history-section {
+    background-color: var(--secondary);
+    padding: 5rem 0 1rem 0;
+    box-shadow: 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.history-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.history-title h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--grey);
+}
+
+.history-title h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.history-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 3rem;
+}
+
+.history-content img {
+    width: 38%;
+}
+
+.main-history-description {
+    width: 50%;
+    text-align: center;
+    line-height: 1.5;
+    padding-right: 5rem;
+    font-size: 1.5rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--black);
+}
+
+.main-history-description .highlighted-text {
+    font-size: 1.8rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.history-content-reverse {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.history-description {
+    width: 50%;
+    text-align: center;
+    padding-left: 4rem;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--black);
+}
+
+.history-description .highlighted-text {
+    font-size: 1.8rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--primary);
+}
+
+.history-content-reverse img {
+    width: 35%;
+}
+
+
+.youth-pledge-section {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    background-color: var(--primary);
+    margin-top: 6rem;
+    background-image: url('./assets/youth-pledge-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.youth-pledge-title {
+    font-size: 2.5rem;
+    font-family: "Oregano", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);  
+}
+
+.youth-pledge-content {
+    max-width: 65rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    text-align: left;
+}
+
+.youth-pledge-content p {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5rem;
+    font-size: 1.4rem;
+    font-family: "Yuji Boku", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+}
+
+.highlight-text {
+    padding-right: 1rem;
+    font-size: 1.5rem;
+    font-family: "Yuji Boku", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--second-color);
+}
+
+.youth-pledge-objectives {
+    display: flex;
+    flex-direction: column;
+}
+
+.objectives-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 2rem 0 2rem;
+    margin-top: 5rem;
+}
+
+.objectives-title h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--grey);
+}
+
+.objectives-title h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.objectives-grid {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.objectives-item {
+    width: 30%;
+    background: var(--gradient);
+    padding: 2.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} 
+
+.objectives-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0.625rem 1.25rem var(--primary);
+}
+
+.objectives-item i {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.objectives-item h3 {
+    margin-top: 1rem;
+    font-size: 1.5em;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--white);  
+}
+
+.objectives-item p {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--grey);
+    line-height: 1.5;
+ 
+}
+
+.youth-figure {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.youth-figure-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0;
+}
+
+.youth-figure-title h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--grey);  
+
+}
+
+.youth-figure-title h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);  
+}
+
+.youth-figure-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    place-items: center;
+}
+
+.youth-figure-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.youth-figure-description img {
+    width: 70%;
+}
+
+.youth-figure-description h3 {
+    font-size: 1.5rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);  
+    margin-top: 1.5rem;
+}
+
+.youth-figure-description p {
+    font-size: 1.2rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--grey);
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 8rem 1rem 2rem 1rem;
+}
+
+.hero-title h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--grey);   
+}
+
+.hero-title h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    place-items: center;
+    padding: 2rem 2rem;
+    gap: 3rem;
+}
+
+.hero-item {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-item img {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+.action-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem 1rem;
+    background-color: var(--white);
+}
+
+.action-title {
+    text-align: center;
+}
+
+.action-title h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--grey); 
+    margin: 0;
+}
+
+.action-title h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+    margin: 0;
+}
+
+.action-title-description p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--black);
+}
+
+.action-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1rem;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 2px solid var(--grey);
+    margin-top: 2rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+
+.action-img img {
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    width: 100%; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+.action-description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-item h2 {
+    font-size: 1.5rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.action-item p {
+    font-size: 1.2rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--black);
+}
+
+.testimony-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    margin: 0.5rem auto;
+    background-color: var(--secondary);
+}
+
+.main-testimony {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.main-testimony h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--grey);
+}
+
+.main-testimony h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.testimony-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.testimony-container p {
+    width: 40%;
+    font-size: 1.3rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 1.6;
+    color: var(--black);
+}
+
+.testimony-img img {
+    width: 100%;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+.main-contact {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.main-contact h2 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--grey);
+}
+
+.main-contact h1 {
+    font-size: 2.2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.contact-description {
+    width: 80%;
+    text-align: center;
+}
+
+.contact-description p {
+    font-size: 1.8rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 1.4;
+    color: var(--black);
+    margin-bottom: 2.1rem;
+}
+
+.contact-icons {
+    display: flex;
+    margin-top: 1rem;
+    font-size: 2.8rem;
+    margin-right: 1.25rem;
+    
+}
+
+.contact-icon i {
+    font-size: 2.2rem;
+    margin-right: 1rem;
+    color: var(--white);
+    background-color: var(--primary);
+    padding: 0.6rem;
+    border-radius: 50%; 
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-icon:hover i {
+    transform: scale(1.2);
+}
+
+
+@media (max-width:1160px) {
+    :root {
+        font-size: 15px;
+        scroll-behavior: smooth;
+    }
+
+    .nav_links {
+        gap: 3rem;
+    }
+
+    .container {
+        gap: 4rem;
+    }
+
+    .home_pic_container {
+        margin: 0;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+    :root {
+        font-size: 14px;
+        scroll-behavior: smooth;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle span {
+        background-color: var(--white);
+    }
+
+    .menu-toggle input {
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 1.9rem;
+        bottom: 0;
+    }
+
+    ul.nav_links,
+    .nav-btn {
+        display: none;
+    }
+
+    nav {
+        padding: 1.5rem 3rem;
+    }
+    
+    .wrapper-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+        position: fixed;
+        top: 5.3rem;
+        left: 0;
+        right: 0;
+        padding: 2rem 1rem;
+        background-color: var(--white);
+        height: 50vh;    
+        transform: translateY(-200%);
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        z-index: 999;    
+    }
+
+    .wrapper-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-links__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .nav-links__wrapper li,
+    .nav-btn__wrapper  {
+        text-align: center;
+        list-style: none;
+    }
+
+    .nav-links__wrapper a {
+        color: var(--primary);
+        font-size: 1.2rem;
+        font-family: "Madimi One", sans-serif;
+        font-weight: 400;
+        transition: all 0.5s ease;
+        position: relative;
+    }
+
+    .nav-btn__wrapper {
+        font-size: 1rem;
+        margin-top: 2em;
+        padding: 1em 1.5em;
+        background-color: var(--primary);
+        border-radius: 1em;
+      
+    }
+
+    .nav-btn__wrapper a {
+        color: var(--white);
+        font-size: 1.2rem;
+        font-family: "Margarine", sans-serif;
+        font-weight: 400;
+    }
+
+    .nav-links__wrapper a:hover {
+        color: rgb(217, 217, 217);
+    }
+
+    .nav-links__wrapper a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 3px;
+        background-color: rgb(217, 217, 217);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links__wrapper a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .main-description {
+        width: 70%;
+    }
+
+    .main-description h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-description p {
+        font-size: 1.1rem;
+    }
+
+
+    .history-section {
+        padding: 2rem 0;
+    }
+
+    .history-content {
+        margin-bottom: 3rem;
+    }
+
+
+    .main-history-description {
+        padding-right: 3rem;
+    }
+
+    .history-description {
+        width: 100%;
+    }
+
+    .history-content-reverse {
+        gap: 3rem;
+    }
+
+    .history-content-reverse img {
+        width: 35%;
+        margin-right: 3rem;
+    }
+
+    .youth-pledge-objectives {
+        padding: 0;
+    }
+
+    .action-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .action-item {
+        gap: 1.5rem;
+    }
+
+    .action-item:nth-child(3) {
+        grid-column: span 2;
+        justify-self: center;
+        width: 50%;
+    }
+
+    .action-description p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .testimony-section {
+        padding: 2rem 0;
+    }
+
+}
+
+@media (max-width:768px) {
+    :root {
+        font-size: 12px;
+    }
+
+    .menu-toggle {
+        display: flex;   
+    }
+
+    .menu-toggle input {
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 1.9rem;
+        bottom: 0;
+
+    }
+
+    .menu-toggle span {
+        background-color: var(--white);
+    }
+
+    ul.nav_links,
+    .nav-btn {
+        display: none;
+    }
+
+    nav {
+        padding: 1.5rem 3rem;
+    }
+
+    .wrapper-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        padding: 2rem 1rem;
+        background-color: var(--white);
+        height: 50vh;    
+        transform: translateY(-200%);
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        z-index: 999;   
+        position: fixed; 
+    }
+
+    .wrapper-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-links__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .nav-links__wrapper li,
+    .nav-btn__wrapper  {
+        text-align: center;
+        list-style: none;
+    }
+
+    .nav-links__wrapper a {
+        color: var(--primary);
+        font-size: 1.2rem;
+        font-family: "Madimi One", sans-serif;
+        font-weight: 400;
+        transition: all 0.5s ease;
+        position: relative;
+    }
+
+    .nav-btn__wrapper {
+        font-size: 1rem;
+        margin-top: 2em;
+        padding: 1em 1.5em;
+        background-color: var(--primary);
+        border-radius: 1em;
+      
+    }
+
+    .nav-btn__wrapper a {
+        color: var(--white);
+        font-size: 1.2rem;
+        font-family: "Margarine", sans-serif;
+        font-weight: 400;
+    }
+
+    .nav-links__wrapper a:hover {
+        color: rgb(217, 217, 217);
+    }
+
+    .nav-links__wrapper a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 3px;
+        background-color: rgb(217, 217, 217);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links__wrapper a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .container {
+        margin-top: 3rem;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "image"
+          "description";
+        gap: 3rem;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+
+    
+
+    .home_pic_container {
+        grid-area: image;
+    }
+
+    .main-description {
+        grid-area: description;
+        width: 90%;
+    }
+
+    .history-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .history-content-reverse {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                "top"
+                "bottom";
+        gap: 2rem;
+        place-items: center;
+    }
+
+    .history-description p {
+        grid-area: bottom;
+    }
+
+    .history-content-reverse img {
+        grid-area: top;
+        width: 60%;
+    }
+
+    .history-content img {
+        width: 70%;
+    }
+
+    .main-history-description {
+        width: 80%;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    .history-description {
+        width: 80%;
+        padding: 0;
+    }
+
+    .objectives-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        place-items: center;
+    }
+
+    .objectives-item {
+        width: 80%;
+
+    }
+
+    .youth-figure-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .objectives-title {
+        margin-bottom: 2rem;
+    }
+
+    .action-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .testimony-section {
+        gap: 2rem;
+    }
+
+    .testimony-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .testimony-container p {
+        width: 95%;
+        text-align: center;
+    }
+}
+
+@media (max-width:480px) {
+
+}
+
+
+@media (max-width:390px) {
+    .main-description {
+        width: 100%;
+    }
+}
+
+

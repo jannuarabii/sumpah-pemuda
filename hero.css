@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+:root {
+    --primary: #F47373;
+    --second-color: #F1E98B;
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #3F383B;
+    --blue: #4D5BFF;
+    --gradient: linear-gradient(to bottom, #F47373, #DA6AA8);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1.5rem;
+    background: var(--gradient);
+}
+
+.nav-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_logo a {
+    font-size: 2em;
+    color: var(--white); 
+    margin-left: 3rem; 
+}
+
+.nav_logo a:hover {
+    color: #747272;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin-right: auto;
+    margin-left: 2rem;
+    margin-bottom: 30px;
+}
+
+ul li a {
+    font-size: 22px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+    margin-right: 10px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+ul li a:hover {
+    color: #747272;
+}
+
+ul li a .no-hover {
+    color: var(--white);
+    pointer-events: none; 
+}
+
+.nav-title {
+    margin-left: 7rem;
+}
+
+.nav-title h1 {
+    font-size: 2rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--grey);
+    text-align: left;
+}
+
+.header_content {
+    padding: 3rem 18px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+}
+
+.content-img {
+    margin-left: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-img img {
+   margin-right: 10px;
+}
+
+
+
+.content_description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.title-description {
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--primary);
+}
+
+.description-text {
+    margin-bottom: 30px;
+    width: 95%;
+}
+
+.description-text p {
+    font-size: 1.4rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    color: var(--black);
+}
+
+.description-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title-icon h1 {
+    font-size: 30px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--black);
+}
+
+.container-icon {
+    margin-top: 9px;
+    margin-left: 20px;
+}
+
+.icon {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.icon i {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transfrom 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover i {
+    transform: scale(1.1); 
+}
